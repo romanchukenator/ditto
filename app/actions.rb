@@ -28,11 +28,11 @@ post '/signup' do
 end
 
 #Login
-get '/login' do
+get '/' do
   erb :'auth/login'
 end
 
-post '/login' do
+post '/' do
   @user = User.find_by(email: params[:email], password: params[:password])
 
   if @user.password == params[:password]
