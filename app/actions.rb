@@ -48,6 +48,6 @@ end
 
 #Logout
 post '/logout' do
-  current_user = nil
+  session[:user_id] = nil
   redirect '/'
 end
