@@ -1,0 +1,90 @@
+<div class="continer-fluid">
+
+<div class="row">
+
+  <div class="col-xs-12 text-center">
+    <h1>Ditto</h1>
+  </div>
+
+</div>
+
+
+    <% x = 1 %>
+    <% Round.where(game_id: "1").each do %>
+
+    <% if Round.find_by(id: "#{x}").player1_word != Round.find_by(id: "#{x}").player2_word %>
+
+  <div class="row">
+    
+  <div class="col-xs-5 text-center">  
+  <p class="bg-warning"><%= Round.find_by(id: "#{x}").player1_word%></p>
+  </div>
+
+  <div class="col-xs-2 text-center">
+  <p>ROUND <%= x %></p>
+  </div>
+
+  <div class="col-xs-5 text-center">
+  <p class="bg-warning"><%=Round.find_by(id: "#{x}").player2_word%></p>
+  </div>
+
+  </div>
+
+    <% else %>
+    
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h2 class="bg-primary"><%= Round.find_by(id: "#{x}").player1_word %></h2>
+      </div>
+    </div>
+
+    <% end %>
+
+    <% x += 1 %>
+    <% end %>
+
+
+<div class="row">
+  <div class="col-xs-12 text-center">
+
+  <form action="/game" method="POST" class="form-inline" role="form">
+
+  <div class="form-group">
+      <input 
+        type="email"
+        name="guess"
+        type="text" 
+        class="form-control text-center" 
+        placeholder="MAKE A ME HAPPY">
+  </div>
+
+  </div>
+
+  <div class="row">
+  <div class="col-xs-12 text-center">
+
+    <div class="form-group">
+
+<br />
+
+      <button 
+        type="submit" 
+        name="guess"
+        class="btn btn-default">
+        SUBMIT YOUR GUESS
+        </button>
+    </div>
+
+  </div> 
+  </div>
+  
+  </form>
+
+  </div>
+</div>
+
+
+
+</div>
+
+</div>
