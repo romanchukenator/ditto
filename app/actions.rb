@@ -28,18 +28,18 @@ post '/signup' do
 end
 
 #Login
-get '/' do
-  erb :'auth/login'
-end
+# get '/' do
+#   erb :'profile'
+# end
 
 post '/' do
   @user = User.find_by(email: params[:email], password: params[:password])
 
   if @user.password == params[:password]
     session[:user_id] = @user.id
-    redirect '/'
+    redirect '/profile'
   else
-    erb :'auth/login'
+    erb :'/'
   end
 end
 
@@ -47,4 +47,9 @@ end
 post '/logout' do
   session[:user_id] = nil
   redirect '/'
+end
+
+
+get '/profile' do
+  erb :"profile"
 end

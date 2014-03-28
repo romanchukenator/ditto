@@ -1,0 +1,23 @@
+<div class="continer-fluid">
+
+<div class="row">
+
+  <div class="col-xs-12 text-center">
+    <h1>Ditto</h1>
+  </div>
+
+</div>
+
+
+<div class="row">
+
+  <div class="col-xs-12 text-center">
+    <% if current_user %>
+        <h4>Hey there, you!</h4>
+        <h2><%= current_user.email%></h2>
+    <% end %>
+  </div>
+
+</div>
+
+</div>
