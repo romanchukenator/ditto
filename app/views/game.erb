@@ -8,21 +8,40 @@
 
 </div>
 
-<div class="row">
-  <div class="col-xs-5 text-center">
-  <p>Left</p>
+
+    <% x = 1 %>
+    <% Round.where(game_id: "1").each do %>
+
+    <% if Round.find_by(id: "#{x}").player1_word != Round.find_by(id: "#{x}").player2_word %>
+
+  <div class="row">
+    
+  <div class="col-xs-5 text-center">  
+  <p class="bg-warning"><%= Round.find_by(id: "#{x}").player1_word%></p>
   </div>
 
   <div class="col-xs-2 text-center">
-  <p>Center!</p>
+  <p>ROUND <%= x %></p>
   </div>
 
   <div class="col-xs-5 text-center">
-  <p>Right</p>
+  <p class="bg-warning"><%=Round.find_by(id: "#{x}").player2_word%></p>
   </div>
 
+  </div>
 
-</div>
+    <% else %>
+    
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <h2 class="bg-primary"><%= Round.find_by(id: "#{x}").player1_word %></h2>
+      </div>
+    </div>
+
+    <% end %>
+
+    <% x += 1 %>
+    <% end %>
 
 
 <div class="row">
@@ -40,7 +59,6 @@
   </div>
 
   </div>
-
 
   <div class="row">
   <div class="col-xs-12 text-center">

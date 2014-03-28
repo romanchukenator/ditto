@@ -26,14 +26,14 @@
 
   <form action="/game" method="POST" class="form-inline" role="form">
 
-  <div class="form-group">
-      <input 
-        type="email"
-        name="player2"
-        type="text" 
-        class="form-control text-center" 
-        placeholder="REQUEST THE COMPANY OF A FRIEND">
-  </div>
+    <div class="form-group">
+        <input 
+          type="email"
+          name="player2"
+          type="text" 
+          class="form-control text-center" 
+          placeholder="REQUEST THE COMPANY OF A FRIEND">
+    </div>
 
   </div>
 
@@ -45,12 +45,13 @@
 
 <br />
 
-      <button 
-        type="submit" 
-        name="Submit"
-        class="btn btn-default">
-        Search for this joker
-        </button>
+    <button 
+      type="submit" 
+      name="Submit"
+      class="btn btn-default">
+      Search for this joker
+      </button>
+
     </div>
 
   </div> 
@@ -58,10 +59,17 @@
   
   </form>
 
-  </div>
-</div>
+<p>
+Game ID: <%=  %>
+</p>
 
+<p>
+Current User: <%= Game.find(6).logged_in_player(current_user.id) %>
+</p>
 
+<p>
+Other Guy: <%= Game.find(6).other_player(current_user.id) %>
+</p>
 
 </div>
 

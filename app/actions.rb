@@ -9,6 +9,7 @@ get '/' do
 end
 
 get '/profile' do
+  @games = Game.all
   erb :"profile"
 end
 
@@ -85,7 +86,7 @@ post '/game' do
   # else
   #   erb :'/profile'
   # end
-  
+
   redirect '/game'
 end
 
