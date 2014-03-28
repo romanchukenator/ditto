@@ -8,15 +8,19 @@
 
 </div>
 
-
 <div class="row">
-
-  <div class="col-xs-12 text-center">
-    <% if current_user %>
-        <h4>Hey there, you!</h4>
-        <h2><%= current_user.email%></h2>
-    <% end %>
+  <div class="col-xs-5 text-center">
+  <p>Left</p>
   </div>
+
+  <div class="col-xs-2 text-center">
+  <p>Center!</p>
+  </div>
+
+  <div class="col-xs-5 text-center">
+  <p>Right</p>
+  </div>
+
 
 </div>
 
@@ -29,10 +33,10 @@
   <div class="form-group">
       <input 
         type="email"
-        name="player2"
+        name="guess"
         type="text" 
         class="form-control text-center" 
-        placeholder="REQUEST THE COMPANY OF A FRIEND">
+        placeholder="MAKE A ME HAPPY">
   </div>
 
   </div>
@@ -47,9 +51,9 @@
 
       <button 
         type="submit" 
-        name="Submit"
+        name="guess"
         class="btn btn-default">
-        Search for this joker
+        SUBMIT YOUR GUESS
         </button>
     </div>
 

@@ -8,7 +8,14 @@ get '/' do
   erb :'index'
 end
 
+get '/profile' do
+  erb :"profile"
+end
+
+# ====================
 # Sign up
+# ====================
+
 get '/signup' do
   erb :'auth/signup'
 end
@@ -27,10 +34,12 @@ post '/signup' do
     end
 end
 
-#Login
-# get '/' do
-#   erb :'profile'
-# end
+
+
+
+# ====================
+# Log in
+# ====================
 
 post '/' do
   @user = User.find_by(email: params[:email], password: params[:password])
@@ -43,13 +52,44 @@ post '/' do
   end
 end
 
-#Logout
+# ====================
+# Logout
+# ====================
+
 post '/logout' do
-  session[:user_id] = nil
+  session[:User_id] = nil
   redirect '/'
 end
 
+get '/logout' do
+  session[:User_id] = nil
+  redirect '/'
+end
 
-get '/profile' do
-  erb :"profile"
+# ====================
+# Game
+# ====================
+
+post '/game' do
+
+  if @player2 = User.find_by(email: params[:player2])
+    
+    puts current_user.email
+    @game = Game.create_new_game_invite(current_user, @player2)
+  
+    @game.save
+  end
+
+  # if @game.save
+  #   redirect '/profile'
+  # else
+  #   erb :'/profile'
+  # end
+  
+  redirect '/game'
+end
+
+
+get '/game' do
+  erb :'game'
 end
