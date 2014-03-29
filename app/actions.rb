@@ -28,7 +28,6 @@ post '/signup' do
     )
 
     if @user.save
-      current_user
       redirect '/'
     else
       erb :'auth/signup'    
@@ -71,31 +70,37 @@ end
 # Game
 # ====================
 
-post '/game' do
-
+#Creates a new game with whomever you wish. Needs a validator for a valid email a1!
+post '/create' do
   if @player2 = User.find_by(email: params[:player2])
-    
-    puts current_user.email
     @game = Game.create_new_game_invite(current_user, @player2)
-  
     @game.save
   end
-
-  # if @game.save
-  #   redirect '/profile'
-  # else
-  #   erb :'/profile'
-  # end
 
   redirect '/game'
 end
 
+post '/game/:game_id/guess' do
+  puts params[:user_guess]
+  puts params[:game_id]
+end
 
 get '/game' do
-  erb :'game'
+  game = Game.where(player1_id: current_user.id).last
+  redirect "/game/#{game.id}"
 end
 
 get '/game/:game_id' do
   @game = Game.find params[:game_id]
   erb :'game'
+end
+
+post '/game/:game_id/create-round' do
+  @round = Round.create(
+    game_id: params[:game_id],
+    player1_word: params[:first_word]
+    )
+
+  @round.notify_opponent(current_user)
+  redirect 'profile'
 end

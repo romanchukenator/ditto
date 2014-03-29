@@ -1,5 +1,4 @@
 <div class="continer-fluid">
-
 <div class="row">
 
   <div class="col-xs-12 text-center">
@@ -24,7 +23,7 @@
 <div class="row">
   <div class="col-xs-12 text-center">
 
-  <form action="/game" method="POST" class="form-inline" role="form">
+  <form action="/create" method="POST" class="form-inline" role="form">
 
     <div class="form-group">
         <input 
@@ -49,7 +48,7 @@
       type="submit" 
       name="Submit"
       class="btn btn-default">
-      Search for this joker
+      Start a game with this joker
       </button>
 
     </div>
@@ -63,12 +62,11 @@
 
 <p>
 <a href="/game/<%= user_games.id %>">Game ID: <%= user_games.id %></a><br />
-Current User: <%= Game.find(user_games.id).logged_in_player(current_user.id) %><br />
-Other Guy: <%= Game.find(user_games.id).other_player(current_user.id) %><br />
+Current User: <%= Game.find(user_games.id).logged_in_player(current_user) %><br />
+Other Guy: <%= Game.find(user_games.id).other_player(current_user) %><br />
 </p>
 
 <% end %>
 
 </div>
-
 </div>

@@ -1,134 +1,58 @@
 <div class="continer-fluid">
 
-<div class="row">
 
+<div class="row">
   <div class="col-xs-12 text-center">
     <h1>Ditto</h1>
+    <h2>Game ID: <%= @game.id %> </h2>
+    <h2>User: <%= current_user.email %></h2>
+    <h2>Actually player: <%= @game.actually_player(current_user) %></h2>
   </div>
-
 </div>
 
-
-    <% x = 1 %>
-    <% Round.where(game_id: "1").each do %>
-
-    <% if Round.find_by(id: "#{x}").player1_word != Round.find_by(id: "#{x}").player2_word %>
-
-  <div class="row">
-    
-  <div class="col-xs-5 text-center">  
-  <p class="bg-warning"><%= Round.find_by(id: "#{x}").player1_word%></p>
-  </div>
-
-  <div class="col-xs-2 text-center">
-  <p>ROUND <%= x %></p>
-  </div>
-
-  <div class="col-xs-5 text-center">
-  <p class="bg-warning"><%=Round.find_by(id: "#{x}").player2_word%></p>
-  </div>
-
-  </div>
-
-    <% else %>
-    
-    <div class="row">
-      <div class="col-xs-12 text-center">
-        <h2 class="bg-primary"><%= Round.find_by(id: "#{x}").player1_word %></h2>
-      </div>
-    </div>
-
-    <% end %>
-
-    <% x += 1 %>
-    <% end %>
-
-
+<% if !Round.round_exists?(@game) && @game.player1?(current_user) %>
 <div class="row">
+  <h2>Round doesn't exists!!!</h2>
+
   <div class="col-xs-12 text-center">
+    <form
+    action="/game/<%= @game.id %>/create-round" 
+    method="POST"
+    class="form-inline" 
+    role="form">
+  </div>
 
-  <form action="/game" method="POST" class="form-inline" role="form">
-
-  <div class="form-group">
-      <input 
-        type="email"
-        name="guess"
-        type="text" 
+  <div class="col-xs-12 text-center">
+    <input 
+        type="text"
         class="form-control text-center" 
-        placeholder="MAKE A ME HAPPY">
+        placeholder="WHAT'S THE COMMONALITY?"
+        NAME="first_word">
   </div>
 
-  </div>
-
-  <div class="row">
   <div class="col-xs-12 text-center">
-
-    <div class="form-group">
-
-<br />
-
-      <button 
-        type="submit" 
-        name="guess"
-        class="btn btn-default">
-        SUBMIT YOUR GUESS
-        </button>
-    </div>
-
-  </div> 
+    <button 
+      type="submit" 
+      name="Submit"
+      class="btn btn-default">
+          MAKE IT GOOD
+    </button>
   </div>
-  
+
   </form>
 
-  </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- New page -->
-<!-- New page -->
-<!-- New page -->
-<!-- New page -->
-
-<% @current_game = Game.find(@game.id) %>
-
-<div class="row">
-
-  <div class="col-xs-12 text-center">
-    <h1>Ditto</h1>
-  </div>
-
-</div>
-<p>
-Game ID:<%= @game.id %><br />
-Current User: <%= @current_game.logged_in_player(current_user.id) %><br /> 
-
-
-<% if current_user.id == @current_game.player1_id %>
-  Actually Player: Player 1
-<% end %>
-
-<% if current_user.id == @current_game.player2_id %>
-  Actually Player: Player 2
 <% end %>
 
 
-<br />
-<br />
 
-Other Guy: <%= @current_game.other_player(current_user.id) %><br />
-Actually Player: <%= %>
 
-</p>
-</div>
+
+<% if Round.round_exists?(@game) %>
+  <h2>Round exists!!!</h2>
+
+<% end %>
+
+
+
 </div>
