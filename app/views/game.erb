@@ -85,6 +85,50 @@
 
 
 
-</div>
 
+
+
+
+
+
+
+
+
+
+<!-- New page -->
+<!-- New page -->
+<!-- New page -->
+<!-- New page -->
+
+<% @current_game = Game.find(@game.id) %>
+
+<div class="row">
+
+  <div class="col-xs-12 text-center">
+    <h1>Ditto</h1>
+  </div>
+
+</div>
+<p>
+Game ID:<%= @game.id %><br />
+Current User: <%= @current_game.logged_in_player(current_user.id) %><br /> 
+
+
+<% if current_user.id == @current_game.player1_id %>
+  Actually Player: Player 1
+<% end %>
+
+<% if current_user.id == @current_game.player2_id %>
+  Actually Player: Player 2
+<% end %>
+
+
+<br />
+<br />
+
+Other Guy: <%= @current_game.other_player(current_user.id) %><br />
+Actually Player: <%= %>
+
+</p>
+</div>
 </div>

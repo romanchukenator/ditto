@@ -94,3 +94,8 @@ end
 get '/game' do
   erb :'game'
 end
+
+get '/game/:game_id' do
+  @game = Game.find params[:game_id]
+  erb :'game'
+end

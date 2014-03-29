@@ -59,21 +59,12 @@
   
   </form>
 
-
-<% @user_games = @games.where("player1_id = ? or player2_id = ?", current_user.id, current_user.id).where(status: "Invite") %>
-
-<% @user_games.each do |user_games| %>
+<% @games.user_games(current_user).each do |user_games| %>
 
 <p>
-Game ID: <%= user_games.id %>
-</p>
-
-<p>
-Current User: <%= Game.find(6).logged_in_player(current_user.id) %>
-</p>
-
-<p>
-Other Guy: <%= Game.find(6).other_player(current_user.id) %>
+<a href="/game/<%= user_games.id %>">Game ID: <%= user_games.id %></a><br />
+Current User: <%= Game.find(user_games.id).logged_in_player(current_user.id) %><br />
+Other Guy: <%= Game.find(user_games.id).other_player(current_user.id) %><br />
 </p>
 
 <% end %>
