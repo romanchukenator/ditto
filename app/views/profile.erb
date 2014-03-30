@@ -34,6 +34,12 @@
           placeholder="REQUEST THE COMPANY OF A FRIEND">
     </div>
 
+<div class="col-xs-12 text-center">
+<p>
+<small>You can't start a match with yourself, so don't. Just don't.
+</small>
+</p>
+
   </div>
 
 
@@ -41,15 +47,12 @@
   <div class="col-xs-12 text-center">
 
     <div class="form-group">
-<br />
-
     <button 
       type="submit" 
       name="Submit"
       class="btn btn-default">
       Start a game with this joker
       </button>
-
     </div>
 
   </div> 
@@ -57,12 +60,24 @@
   
   </form>
 
-<% @games.user_games(current_user).each do |user_games| %>
-  <div class="alert alert-success col-xs-12 text-center">
-    <a href="/game/<%= user_games.id %>">Game ID: <%= user_games.id %></a><br />
-    Current User: <%= Game.find(user_games.id).logged_in_player(current_user) %><br />
-    Other Guy: <%= Game.find(user_games.id).other_player(current_user) %><br />
+<br />
+<% @games.user_games(current_user).each do |user_game| %>
+<div class="row">
+
+<div class="col-xs-4">
+</div>
+
+<a href="/game/<%= user_game.id %>">  
+  <div class="alert alert-success col-xs-4 text-center">
+  <p>ROUND: <%= Round.where(game_id: user_game.id).count %>
+    Other Guy: <%= Game.find(user_game.id).other_player(current_user) %><br />
   </div>
+</a>
+
+<div class="col-xs-4">
+</div>
+
+</div>
 <% end %>
 
 </div>

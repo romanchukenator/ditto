@@ -72,11 +72,17 @@ end
 
 #Creates a new game with whomever you wish. Needs a validator for a valid email a1!
 post '/create' do
-  if @player2 = User.find_by(email: params[:player2])
+  if params[:player2] != current_user.email
+    if @player2 = User.find_by(email: params[:player2])
     @game = Game.create_new_game_invite(current_user, @player2)
     @game.save
+    end
+  else
+    @games = Game.all
+    @error = 1
+    redirect :'/profile'
   end
-
+  
   redirect '/game'
 end
 

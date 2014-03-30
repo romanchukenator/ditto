@@ -2,10 +2,10 @@ class Round < ActiveRecord::Base
   belongs_to :game
 
   # validates :player1_word, presence: true
-  validates :player1_word, length: { maximum: 50 }
+  # validates :player1_word, length: { maximum: 50 }
 
   # validates :player2_word, presence: true
-  validates :player2_word, length: { maximum: 50 }
+  # validates :player2_word, length: { maximum: 50 }
 
   def notify_opponent(current_player)
     puts "Should have an email sent out!"
