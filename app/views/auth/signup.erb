@@ -1,12 +1,23 @@
+
+<% if @user %>
 <% if @user.errors.any? %>
-  <div>
-    <strong>Some issues with your message, please fix them:</strong>
+  <div class="row">
+    <div class="col-xs-4">
+    </div>
+
+    <div class="col-xs-4">
+    <strong>Gah! Foiled!</strong>
     <ul>
       <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>
+    </div>
+    
+    <div class="col-xs-4">
+    </div>
   </div>
+<% end %>
 <% end %>
 
 <h1>Please sign up</h1>

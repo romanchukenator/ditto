@@ -27,12 +27,20 @@ class Game < ActiveRecord::Base
   end
 
   def self.user_games(current_user)
-    where("player1_id = ? or player2_id = ?", current_user.id, current_user.id).where(status: "Invite")
+    where("player1_id = ? or player2_id = ?", current_user.id, current_user.id).where(status: "On Going")
   end
 
-  def game_over?
+  def self.user_complete(current_user)
+    where("player1_id = ? or player2_id = ?", current_user.id, current_user.id).where(status: "Complete")
   end
 
+  def on_going
+    update(status: "On Going")
+  end
+
+  def game_over
+    update(status: "Complete")
+  end
 end
 
 

@@ -105,7 +105,6 @@ post '/game/:game_id/guess/:round_id' do
       @round.update(player2_word: params[:player2_word])
     end
 
-
     if !Round.find(@round).word_match?
       if Round.find(@round).next_round?
         Round.create(game_id: @game_id)
@@ -126,11 +125,10 @@ get '/game/:game_id' do
 end
 
 post '/game/:game_id/create-round' do
-  @round = Round.create(
+    @round = Round.create(
     game_id: params[:game_id],
     player1_word: params[:first_word]
     )
-
-  @round.notify_opponent(current_user)
+    Game.find(params[:game_id]).on_going
   redirect 'profile'
 end

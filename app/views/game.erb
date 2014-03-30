@@ -18,7 +18,7 @@
   <div class="row">
     
     <div class="col-xs-12 text-center">
-    <h2>Round doesn't exists!!!</h2>
+    <h2>FIRST TURN</h2>
 
       <form
       action="/game/<%= @game.id %>/create-round" 
@@ -185,12 +185,13 @@
     </div>
 
     <div class="col-xs-6 text-center">
-      <h1><%= @current_round.player2_word %></h1>
+      <h1>Both said: <%= @current_round.player2_word %></h1>
     </div>
 
     <div class="col-xs-3">
     </div>
   </div>
+  <% @game.update(status: "Complete") %>  
 <% end %>
 
 <p id="the-good-stuff"></p>
