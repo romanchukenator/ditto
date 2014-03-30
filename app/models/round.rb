@@ -21,7 +21,11 @@ class Round < ActiveRecord::Base
   end
 
   def word_match?
-    (player1_word == player2_word) && player1_word != nil
+    (player1_word == player2_word) && (player1_word != nil || player2_word != nil)
+  end
+
+  def self.round_count(game)
+    where(game_id: game.id).count
   end
 
 end
