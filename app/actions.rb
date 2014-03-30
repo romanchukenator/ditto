@@ -106,7 +106,7 @@ post '/game/:game_id/guess/:round_id' do
       end
     end
 
-  redirect "/game/#{@game_id}"
+  redirect "/game/#{@game_id}#the-good-stuff"
 end
 
 get '/game' do
