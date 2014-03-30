@@ -12,33 +12,12 @@ class Round < ActiveRecord::Base
     player1_word
   end
 
-  def player2_word?(game)
-    
-  end
-  
-
-  def update_word(current_player)
-  end
-
-  def add_word(current_player)
-    if validate_player1?(current_player)
-    end
-
-    if validate_player2?(current_player)
-    end
-  end
-
-  def validate_player1?(current_player)
-  end
-
-  def validate_player2?(current_player)
-  end
-
-
-
   def self.round_exists?(game)
     find_by(game_id: game.id)
   end
 
+  def next_round?
+    player1_word && player2_word
+  end
 
 end

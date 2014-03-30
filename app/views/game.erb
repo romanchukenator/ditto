@@ -47,11 +47,12 @@
 
 
 
-
+<!-- This is all the stuff regarding the way to pick players and who should go when -->
 
 <% if Round.round_exists?(@game) %>
 <% @current_round = Round.where(game_id: @game.id).last%>
 <%= @current_round.id %>
+
   <% if @current_round.player1_turn?(current_user) %>
   <% end %>
 
@@ -74,7 +75,7 @@
       <input 
           type="text"
           class="form-control text-center" 
-          placeholder="WHAT'S THE COMMONALITY?"
+          placeholder="WHAT'S THE COMMONALITY, PLAYER1?"
           NAME="player1_word">
     </div>
 
@@ -109,7 +110,7 @@
       <input 
           type="text"
           class="form-control text-center" 
-          placeholder="WHAT'S THE COMMONALITY?"
+          placeholder="WHAT'S THE COMMONALITY, PLAYER 2?"
           NAME="player2_word">
     </div>
 

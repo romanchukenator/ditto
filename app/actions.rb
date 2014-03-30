@@ -82,19 +82,28 @@ end
 
 post '/game/:game_id/guess/:round_id' do
 
-  if Game.find(params[:game_id]).player1?(current_user)
-    puts params[:player1_word]
-    puts params[:game_id]
+    @round = Round.find(params[:round_id])
+    @game_id = params[:game_id]
 
+    if Game.find(@game_id).player1?(current_user)
+      puts params[:player1_word]
+      puts @game_id
 
+      @round.update(player1_word: params[:player1_word])
+    end
 
-  end
+    if !Game.find(@game_id).player1?(current_user)
+      puts params[:player2_word]
+      puts @game_id
 
-  if !Game.find(params[:game_id]).player1?(current_user)
-    puts params[:player2_word]
-    puts params[:game_id]  
-  end
+      @round.update(player2_word: params[:player2_word])
+    end
 
+    # if Round.find(@round).next_round?
+    #   Round.create(game_id: @game_id)
+    # end
+
+  redirect "/game/#{@game_id}"
 end
 
 get '/game' do
