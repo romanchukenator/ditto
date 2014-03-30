@@ -8,8 +8,12 @@ class Round < ActiveRecord::Base
     puts "Should have an email sent out!"
   end
 
+  def player1_turn?(current_player)
+    player1_word
+  end
+
   def player2_word?(game)
-    Round.find_by(game.id).player2_word
+    
   end
   
 

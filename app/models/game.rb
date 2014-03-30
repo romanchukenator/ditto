@@ -6,6 +6,22 @@ class Game < ActiveRecord::Base
     @game = new(player1: player1, player2: player2, status: "Invite")
   end
 
+  def logged_in_player(current_user)
+    if current_user.id == player1_id
+      User.find(current_user).email
+    elsif current_user.id == player2_id      
+      User.find(current_user).email
+    end
+  end
+
+  def other_player(current_user)
+    if current_user.id != player1_id
+      User.find(player1_id).email
+    elsif current_user.id != player2_id      
+      User.find(player2_id).email
+    end  
+  end
+
   def player1?(current_user)
     current_user.id == player1_id
   end

@@ -80,9 +80,21 @@ post '/create' do
   redirect '/game'
 end
 
-post '/game/:game_id/guess' do
-  puts params[:user_guess]
-  puts params[:game_id]
+post '/game/:game_id/guess/:round_id' do
+
+  if Game.find(params[:game_id]).player1?(current_user)
+    puts params[:player1_word]
+    puts params[:game_id]
+
+
+
+  end
+
+  if !Game.find(params[:game_id]).player1?(current_user)
+    puts params[:player2_word]
+    puts params[:game_id]  
+  end
+
 end
 
 get '/game' do

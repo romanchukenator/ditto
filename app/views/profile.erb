@@ -59,13 +59,11 @@
   </form>
 
 <% @games.user_games(current_user).each do |user_games| %>
-
-<p>
-<a href="/game/<%= user_games.id %>">Game ID: <%= user_games.id %></a><br />
-Current User: <%= Game.find(user_games.id).logged_in_player(current_user) %><br />
-Other Guy: <%= Game.find(user_games.id).other_player(current_user) %><br />
-</p>
-
+  <div class="alert alert-success col-xs-12 text-center">
+    <a href="/game/<%= user_games.id %>">Game ID: <%= user_games.id %></a><br />
+    Current User: <%= Game.find(user_games.id).logged_in_player(current_user) %><br />
+    Other Guy: <%= Game.find(user_games.id).other_player(current_user) %><br />
+  </div>
 <% end %>
 
 </div>
