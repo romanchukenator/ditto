@@ -1,3 +1,14 @@
+<% if @user.errors.any? %>
+  <div>
+    <strong>Some issues with your message, please fix them:</strong>
+    <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <h1>Please sign up</h1>
 <form action="/signup" method="POST">
   <div>

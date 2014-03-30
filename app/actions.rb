@@ -5,7 +5,7 @@ helpers do
 end
 
 get '/' do
-  erb :'index'
+  erb :index
 end
 
 get '/profile' do
@@ -34,9 +34,6 @@ post '/signup' do
     end
 end
 
-
-
-
 # ====================
 # Log in
 # ====================
@@ -44,11 +41,14 @@ end
 post '/' do
   @user = User.find_by(email: params[:email], password: params[:password])
 
-  if @user.password == params[:password]
-    session[:user_id] = @user.id
-    redirect '/profile'
+  if User.verify_log_in?(params[:email], params[:password])
+    if @user.password == params[:password]
+      session[:user_id] = @user.id    
+      redirect '/profile'
+    end
   else
-    erb :'/'
+    @log_in_error = 1
+    erb :'/index'
   end
 end
 
