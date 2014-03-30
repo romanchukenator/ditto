@@ -99,9 +99,9 @@ post '/game/:game_id/guess/:round_id' do
       @round.update(player2_word: params[:player2_word])
     end
 
-    # if Round.find(@round).next_round?
-    #   Round.create(game_id: @game_id)
-    # end
+    if Round.find(@round).next_round?
+      Round.create(game_id: @game_id)
+    end
 
   redirect "/game/#{@game_id}"
 end

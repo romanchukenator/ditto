@@ -50,8 +50,8 @@
 <!-- This is all the stuff regarding the way to pick players and who should go when -->
 
 <% if Round.round_exists?(@game) %>
-<% @current_round = Round.where(game_id: @game.id).last%>
-<%= @current_round.id %>
+  <% @current_round = Round.where(game_id: @game.id).last%>
+  <%= @current_round.id %>
 
   <% if @current_round.player1_turn?(current_user) %>
   <% end %>
