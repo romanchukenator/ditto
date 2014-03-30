@@ -20,4 +20,8 @@ class Round < ActiveRecord::Base
     player1_word && player2_word
   end
 
+  def word_match?
+    (player1_word == player2_word) && player1_word != nil
+  end
+
 end
