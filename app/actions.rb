@@ -15,6 +15,15 @@ get '/profile' do
   erb :"profile"
 end
 
+
+# ====================
+# Test Page
+# ====================
+
+get '/test' do
+  erb :'test'
+end
+
 # ====================
 # Sign up
 # ====================
