@@ -1,3 +1,5 @@
+# require 'mail'
+
 helpers do
   def current_user
      @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -74,8 +76,9 @@ end
 post '/create' do
   if params[:player2] != current_user.email
     if @player2 = User.find_by(email: params[:player2])
-    @game = Game.create_new_game_invite(current_user, @player2)
-    @game.save
+      
+        @game = Game.create_new_game_invite(current_user, @player2)
+        @game.save
     end
   else
     @games = Game.all

@@ -41,3 +41,33 @@ background: -ms-linear-gradient(top,  #3b3c6d 0%,#9fc1f4 100%); /* IE10+ */
 background: linear-gradient(to bottom,  #3b3c6d 0%,#9fc1f4 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b3c6d', endColorstr='#9fc1f4',GradientType=0 ); /* IE6-9 */
 }
+
+.color-fill-1 {
+background-color: #D3D809;
+height: 70px;
+padding-left: 9px;
+padding-right: 9px;
+}
+
+.speech-triangle{
+background: url('http://i62.tinypic.com/15nautc.png') no-repeat left top;
+height: 25px;
+}
+
+input.form-control{
+
+height: 55px;
+margin-top:8px;
+padding: 0px 6px;
+font-size: 2em;
+text-align: center;
+color: #84310C;
+background-color: #EDED7E;
+background-image: none;
+border: none;
+border-radius: 0px;
+}
+
+.background-img{
+background: url('http://www.imagebrowse.com/wp-content/uploads/2013/07/games-fascinating-mario-sprite-backgrounds-background.png');
+}

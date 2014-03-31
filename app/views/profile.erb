@@ -83,36 +83,25 @@
 
 <% end %>
 
+  <h2>Complete</h2>
+  <% @games.user_complete(current_user).each do |user_game| %>
 
+    <div class="row">
 
+    <div class="col-xs-4">
+    </div>
 
-<h2>Complete</h2>
-<% @games.user_complete(current_user).each do |user_game| %>
+    <a href="/game/<%= user_game.id %>">  
+      <div class="alert alert-danger col-xs-4 text-center">
+        <p>ROUND: <%= Round.where(game_id: user_game.id).count %>
+          Other Guy: <%= Game.find(user_game.id).other_player(current_user) %><br />
+      </div>
+    </a>
 
-<div class="row">
+    <div class="col-xs-4">
+    </div>
 
-<div class="col-xs-4">
-</div>
-
-<a href="/game/<%= user_game.id %>">  
-  <div class="alert alert-danger col-xs-4 text-center">
-  <p>ROUND: <%= Round.where(game_id: user_game.id).count %>
-    Other Guy: <%= Game.find(user_game.id).other_player(current_user) %><br />
-  </div>
-</a>
-
-<div class="col-xs-4">
-</div>
-
-<% end %>
-
-
-
-
-
-
-
-
+  <% end %>
 
 </div>
 </div>
