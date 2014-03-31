@@ -1,5 +1,4 @@
 <div class="continer-fluid">
-
 <div class="row">
 
   <div class="col-xs-12 text-center">
@@ -24,7 +23,7 @@
 <div class="row">
   <div class="col-xs-12 text-center">
 
-  <form action="/game" method="POST" class="form-inline" role="form">
+  <form action="/create" method="POST" class="form-inline" role="form">
 
     <div class="form-group">
         <input 
@@ -35,6 +34,12 @@
           placeholder="REQUEST THE COMPANY OF A FRIEND">
     </div>
 
+<div class="col-xs-12 text-center">
+<p>
+<small>You can't start a match with yourself, so don't. Just don't.
+</small>
+</p>
+
   </div>
 
 
@@ -42,16 +47,12 @@
   <div class="col-xs-12 text-center">
 
     <div class="form-group">
-
-<br />
-
     <button 
       type="submit" 
       name="Submit"
       class="btn btn-default">
-      Search for this joker
+      Start a game with this joker
       </button>
-
     </div>
 
   </div> 
@@ -59,25 +60,48 @@
   
   </form>
 
+<br />
 
-<% @user_games = @games.where("player1_id = ? or player2_id = ?", current_user.id, current_user.id).where(status: "Invite") %>
 
-<% @user_games.each do |user_games| %>
+<h2>On going</h2>
+<% @games.user_games(current_user).each do |user_game| %>
 
-<p>
-Game ID: <%= user_games.id %>
-</p>
+<div class="row">
 
-<p>
-Current User: <%= Game.find(6).logged_in_player(current_user.id) %>
-</p>
+<div class="col-xs-4">
+</div>
 
-<p>
-Other Guy: <%= Game.find(6).other_player(current_user.id) %>
-</p>
+<a href="/game/<%= user_game.id %>">  
+  <div class="alert alert-success col-xs-4 text-center">
+  <p>ROUND: <%= Round.where(game_id: user_game.id).count %>
+    Other Guy: <%= Game.find(user_game.id).other_player(current_user) %><br />
+  </div>
+</a>
+
+<div class="col-xs-4">
+</div>
 
 <% end %>
 
-</div>
+  <h2>Complete</h2>
+  <% @games.user_complete(current_user).each do |user_game| %>
 
+    <div class="row">
+
+    <div class="col-xs-4">
+    </div>
+
+    <a href="/game/<%= user_game.id %>">  
+      <div class="alert alert-danger col-xs-4 text-center">
+        <p>ROUND: <%= Round.where(game_id: user_game.id).count %>
+          Other Guy: <%= Game.find(user_game.id).other_player(current_user) %><br />
+      </div>
+    </a>
+
+    <div class="col-xs-4">
+    </div>
+
+  <% end %>
+
+</div>
 </div>

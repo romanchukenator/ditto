@@ -1,0 +1,74 @@
+
+.form-inline .form-group input {
+    width:300px;
+}
+
+header {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+body { 
+  padding: 70px 20px 70px 20px;
+  /*padding: 70px 20px 0px 20px;*/
+}
+
+footer {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.footer-bg {
+  background: url('http://wallike.com/wp-content/uploads/2013/04/video-game-wallpaper.png')no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 1000px;
+}
+
+
+.img-push {
+  height:690px;
+}
+  
+.gradient{
+background: #3b3c6d; /* Old browsers */
+background: -moz-linear-gradient(top,  #3b3c6d 0%, #9fc1f4 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3b3c6d), color-stop(100%,#9fc1f4)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  #3b3c6d 0%,#9fc1f4 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  #3b3c6d 0%,#9fc1f4 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  #3b3c6d 0%,#9fc1f4 100%); /* IE10+ */
+background: linear-gradient(to bottom,  #3b3c6d 0%,#9fc1f4 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b3c6d', endColorstr='#9fc1f4',GradientType=0 ); /* IE6-9 */
+}
+
+.color-fill-1 {
+background-color: #D3D809;
+height: 70px;
+padding-left: 9px;
+padding-right: 9px;
+}
+
+.speech-triangle{
+background: url('http://i62.tinypic.com/15nautc.png') no-repeat left top;
+height: 25px;
+}
+
+input.form-control{
+
+height: 55px;
+margin-top:8px;
+padding: 0px 6px;
+font-size: 2em;
+text-align: center;
+color: #84310C;
+background-color: #EDED7E;
+background-image: none;
+border: none;
+border-radius: 0px;
+}
+
+.background-img{
+background: url('http://www.imagebrowse.com/wp-content/uploads/2013/07/games-fascinating-mario-sprite-backgrounds-background.png');
+
