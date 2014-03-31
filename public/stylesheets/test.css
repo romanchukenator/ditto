@@ -1,0 +1,141 @@
+.form-inline .form-group input {
+    width:300px;
+}
+
+header {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+body { 
+  padding: 70px 20px 0px 20px;
+  margin: 0;
+  background-image: url();
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+html, body {
+  height: 100%;
+}
+
+#wrap {
+  min-height: 100%;
+}
+
+.footer {
+  position: relative;
+  margin-top: -150px; /* negative value of footer height */
+  height: 150px;
+  clear:both;
+  padding-top:20px;
+} 
+
+input.word {
+  height: 55px;
+  width: 100%;
+  margin-top: 8px;
+  padding: 0px 6px;
+  font-size: 30px;
+  text-align: center;
+  background-color: #a8c9b3;
+  background-image: none;
+  border: none;
+  border-radius: 0px;
+ }
+
+.input-color{
+  background-color: #73cd92;
+  height: 70px;
+  padding-left: 10px;
+  padding-right: 10px;
+  position: relative;
+  bottom: -180px;
+}
+
+/*.blue-button {
+  position: relative;
+  bottom: -180px;
+}*/
+
+.speech-tri{
+  background-image: url(/images/speech-tri.png);
+  background-repeat: no-repeat;
+  background-position: top left;
+  position: relative;
+  bottom: -180px;
+}
+
+.avatar-img {
+  width: 300px;
+  height: 300px;
+  position: relative;
+  bottom: -250px;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/*
+.body-bg {
+  background: url(/images/background03.png)no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  
+} */
+
+.footer-bg {
+  background: url(/images/background02b.png)no-repeat center center;
+  -webkit-background-size: 100%;
+  -moz-background-size: 100%;
+  -o-background-size: 100%;
+  background-size: 100%;
+  background-position: bottom;
+  height: 580px;
+}
+
+
+/*.img-push-1 {
+  height:280px;
+}
+*/
+
+
+.word-box{
+  min-height:200px;
+  position: relative;
+  bottom: -140px;
+}
+
+.word-box-gradient{
+background: rgb(0,0,0); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(0,0,0,1) 0%, rgba(0,0,0,1) 33%, rgba(1,4,6,1) 35%, rgba(1,4,6,1) 37%, rgba(2,6,9,1) 37%, rgba(2,6,9,1) 38%, rgba(3,9,12,1) 38%, rgba(2,6,9,1) 38%, rgba(3,9,12,1) 39%, rgba(2,6,9,1) 39%, rgba(3,9,12,1) 39%, rgba(4,12,17,1) 42%, rgba(5,14,20,1) 42%, rgba(5,14,20,1) 43%, rgba(6,17,25,1) 44%, rgba(10,27,39,1) 50%, rgba(11,29,42,1) 51%, rgba(11,29,42,1) 52%, rgba(11,32,46,1) 52%, rgba(12,33,47,1) 54%, rgba(17,49,70,1) 60%, rgba(20,54,77,1) 63%, rgba(21,58,84,1) 65%, rgba(22,59,84,1) 66%, rgba(24,65,93,1) 68%, rgba(25,70,100,1) 71%, rgba(27,73,105,1) 71%, rgba(27,76,108,1) 73%, rgba(30,81,116,1) 75%, rgba(32,87,124,1) 79%, rgba(33,90,130,1) 80%, rgba(32,90,128,1) 80%, rgba(34,94,135,1) 82%, rgba(34,93,133,1) 82%, rgba(35,97,139,1) 83%, rgba(35,96,137,1) 83%, rgba(37,103,149,1) 87%, rgba(41,114,163,1) 95%, rgba(42,116,166,1) 98%, rgba(41,115,165,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,1)), color-stop(33%,rgba(0,0,0,1)), color-stop(35%,rgba(1,4,6,1)), color-stop(37%,rgba(1,4,6,1)), color-stop(37%,rgba(2,6,9,1)), color-stop(38%,rgba(2,6,9,1)), color-stop(38%,rgba(3,9,12,1)), color-stop(38%,rgba(2,6,9,1)), color-stop(39%,rgba(3,9,12,1)), color-stop(39%,rgba(2,6,9,1)), color-stop(39%,rgba(3,9,12,1)), color-stop(42%,rgba(4,12,17,1)), color-stop(42%,rgba(5,14,20,1)), color-stop(43%,rgba(5,14,20,1)), color-stop(44%,rgba(6,17,25,1)), color-stop(50%,rgba(10,27,39,1)), color-stop(51%,rgba(11,29,42,1)), color-stop(52%,rgba(11,29,42,1)), color-stop(52%,rgba(11,32,46,1)), color-stop(54%,rgba(12,33,47,1)), color-stop(60%,rgba(17,49,70,1)), color-stop(63%,rgba(20,54,77,1)), color-stop(65%,rgba(21,58,84,1)), color-stop(66%,rgba(22,59,84,1)), color-stop(68%,rgba(24,65,93,1)), color-stop(71%,rgba(25,70,100,1)), color-stop(71%,rgba(27,73,105,1)), color-stop(73%,rgba(27,76,108,1)), color-stop(75%,rgba(30,81,116,1)), color-stop(79%,rgba(32,87,124,1)), color-stop(80%,rgba(33,90,130,1)), color-stop(80%,rgba(32,90,128,1)), color-stop(82%,rgba(34,94,135,1)), color-stop(82%,rgba(34,93,133,1)), color-stop(83%,rgba(35,97,139,1)), color-stop(83%,rgba(35,96,137,1)), color-stop(87%,rgba(37,103,149,1)), color-stop(95%,rgba(41,114,163,1)), color-stop(98%,rgba(42,116,166,1)), color-stop(100%,rgba(41,115,165,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 33%,rgba(1,4,6,1) 35%,rgba(1,4,6,1) 37%,rgba(2,6,9,1) 37%,rgba(2,6,9,1) 38%,rgba(3,9,12,1) 38%,rgba(2,6,9,1) 38%,rgba(3,9,12,1) 39%,rgba(2,6,9,1) 39%,rgba(3,9,12,1) 39%,rgba(4,12,17,1) 42%,rgba(5,14,20,1) 42%,rgba(5,14,20,1) 43%,rgba(6,17,25,1) 44%,rgba(10,27,39,1) 50%,rgba(11,29,42,1) 51%,rgba(11,29,42,1) 52%,rgba(11,32,46,1) 52%,rgba(12,33,47,1) 54%,rgba(17,49,70,1) 60%,rgba(20,54,77,1) 63%,rgba(21,58,84,1) 65%,rgba(22,59,84,1) 66%,rgba(24,65,93,1) 68%,rgba(25,70,100,1) 71%,rgba(27,73,105,1) 71%,rgba(27,76,108,1) 73%,rgba(30,81,116,1) 75%,rgba(32,87,124,1) 79%,rgba(33,90,130,1) 80%,rgba(32,90,128,1) 80%,rgba(34,94,135,1) 82%,rgba(34,93,133,1) 82%,rgba(35,97,139,1) 83%,rgba(35,96,137,1) 83%,rgba(37,103,149,1) 87%,rgba(41,114,163,1) 95%,rgba(42,116,166,1) 98%,rgba(41,115,165,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 33%,rgba(1,4,6,1) 35%,rgba(1,4,6,1) 37%,rgba(2,6,9,1) 37%,rgba(2,6,9,1) 38%,rgba(3,9,12,1) 38%,rgba(2,6,9,1) 38%,rgba(3,9,12,1) 39%,rgba(2,6,9,1) 39%,rgba(3,9,12,1) 39%,rgba(4,12,17,1) 42%,rgba(5,14,20,1) 42%,rgba(5,14,20,1) 43%,rgba(6,17,25,1) 44%,rgba(10,27,39,1) 50%,rgba(11,29,42,1) 51%,rgba(11,29,42,1) 52%,rgba(11,32,46,1) 52%,rgba(12,33,47,1) 54%,rgba(17,49,70,1) 60%,rgba(20,54,77,1) 63%,rgba(21,58,84,1) 65%,rgba(22,59,84,1) 66%,rgba(24,65,93,1) 68%,rgba(25,70,100,1) 71%,rgba(27,73,105,1) 71%,rgba(27,76,108,1) 73%,rgba(30,81,116,1) 75%,rgba(32,87,124,1) 79%,rgba(33,90,130,1) 80%,rgba(32,90,128,1) 80%,rgba(34,94,135,1) 82%,rgba(34,93,133,1) 82%,rgba(35,97,139,1) 83%,rgba(35,96,137,1) 83%,rgba(37,103,149,1) 87%,rgba(41,114,163,1) 95%,rgba(42,116,166,1) 98%,rgba(41,115,165,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 33%,rgba(1,4,6,1) 35%,rgba(1,4,6,1) 37%,rgba(2,6,9,1) 37%,rgba(2,6,9,1) 38%,rgba(3,9,12,1) 38%,rgba(2,6,9,1) 38%,rgba(3,9,12,1) 39%,rgba(2,6,9,1) 39%,rgba(3,9,12,1) 39%,rgba(4,12,17,1) 42%,rgba(5,14,20,1) 42%,rgba(5,14,20,1) 43%,rgba(6,17,25,1) 44%,rgba(10,27,39,1) 50%,rgba(11,29,42,1) 51%,rgba(11,29,42,1) 52%,rgba(11,32,46,1) 52%,rgba(12,33,47,1) 54%,rgba(17,49,70,1) 60%,rgba(20,54,77,1) 63%,rgba(21,58,84,1) 65%,rgba(22,59,84,1) 66%,rgba(24,65,93,1) 68%,rgba(25,70,100,1) 71%,rgba(27,73,105,1) 71%,rgba(27,76,108,1) 73%,rgba(30,81,116,1) 75%,rgba(32,87,124,1) 79%,rgba(33,90,130,1) 80%,rgba(32,90,128,1) 80%,rgba(34,94,135,1) 82%,rgba(34,93,133,1) 82%,rgba(35,97,139,1) 83%,rgba(35,96,137,1) 83%,rgba(37,103,149,1) 87%,rgba(41,114,163,1) 95%,rgba(42,116,166,1) 98%,rgba(41,115,165,1) 100%); /* IE10+ */
+background: linear-gradient(to bottom,  rgba(0,0,0,1) 0%,rgba(0,0,0,1) 33%,rgba(1,4,6,1) 35%,rgba(1,4,6,1) 37%,rgba(2,6,9,1) 37%,rgba(2,6,9,1) 38%,rgba(3,9,12,1) 38%,rgba(2,6,9,1) 38%,rgba(3,9,12,1) 39%,rgba(2,6,9,1) 39%,rgba(3,9,12,1) 39%,rgba(4,12,17,1) 42%,rgba(5,14,20,1) 42%,rgba(5,14,20,1) 43%,rgba(6,17,25,1) 44%,rgba(10,27,39,1) 50%,rgba(11,29,42,1) 51%,rgba(11,29,42,1) 52%,rgba(11,32,46,1) 52%,rgba(12,33,47,1) 54%,rgba(17,49,70,1) 60%,rgba(20,54,77,1) 63%,rgba(21,58,84,1) 65%,rgba(22,59,84,1) 66%,rgba(24,65,93,1) 68%,rgba(25,70,100,1) 71%,rgba(27,73,105,1) 71%,rgba(27,76,108,1) 73%,rgba(30,81,116,1) 75%,rgba(32,87,124,1) 79%,rgba(33,90,130,1) 80%,rgba(32,90,128,1) 80%,rgba(34,94,135,1) 82%,rgba(34,93,133,1) 82%,rgba(35,97,139,1) 83%,rgba(35,96,137,1) 83%,rgba(37,103,149,1) 87%,rgba(41,114,163,1) 95%,rgba(42,116,166,1) 98%,rgba(41,115,165,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#2973a5',GradientType=0 ); /* IE6-9 */
+
+}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
