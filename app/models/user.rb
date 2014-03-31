@@ -11,9 +11,9 @@ class User < ActiveRecord::Base
   validates :password, length: { minimum: 4 }
 
   def self.verify_log_in?(email, password)
-    @user = User.find_by(email: email)
-
-    (User.find(@user.id).email == email) && (User.find(@user.id).password == password)
+    if @user = User.find_by(email: email)
+      (User.find(@user.id).email == email) && (User.find(@user.id).password == password)
+    end
   end
 
   def password
