@@ -7,10 +7,6 @@
     See: http://necolas.github.com/normalize.css/
   -->
   <link rel="stylesheet" href="/stylesheets/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
-  <link rel="stylesheet" href="/stylesheets/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/javascript/application.js"></script>
@@ -24,6 +20,12 @@
   <!-- Latest compiled and minified JavaScript -->
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 
+<!--
+    application.css is where you put your styles
+  -->
+  <link rel="stylesheet" href="/stylesheets/application.css">
+
+
   <title>Ditto - the game</title>
 
 </head>
@@ -34,7 +36,7 @@
 
   <% if @current_user %>
     <p class="navbar-text navbar-right">
-    <a href = "/logout">log out</a>
+      <a href="/logout">log out</a>
     </p>
   <% end %>
 
