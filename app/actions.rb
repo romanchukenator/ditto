@@ -45,7 +45,7 @@ post '/' do
 
   if User.verify_log_in?(params[:email], params[:password])
     if @user.password == params[:password]
-      session[:user_id] = @user.id    
+      session[:user_id] = @user.id
       redirect '/profile'
     end
   else
