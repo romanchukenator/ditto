@@ -1,14 +1,20 @@
 <% @current_round = Round.where(game_id: @game.id).last%>
 
+
 <div class="continer-fluid">
 
-<div class="row">
-  <div class="col-xs-12 text-center">
-    <h1>Ditto</h1>
-    <h3>Game ID: <%= @game.id %> </h2>
-    <h4>User: <%= current_user.email %></h2>
+  <div class="banner-img">
+  <div class="row text-center">
+
+    <div class="col-xs-12">
+    <img src="http://imageshack.com/a/img823/4277/ww4g.png" height="300" width="auto" />
+    </div>
+
   </div>
-</div>
+  </div>
+
+<div class="word-box-gradient">
+<div class="starfield">
 
 <!--  -->
 <!-- This malarky is to first check if a round exists, if not create one and populate the player1_word column -->
@@ -17,9 +23,9 @@
 <% if !Round.round_exists?(@game) && @game.player1?(current_user) %>
   <div class="row">
     
-    <div class="col-xs-12 text-center">
-    <h2>FIRST TURN</h2>
+    <div class="col-xs-3"></div>
 
+    <div class="col-xs-6 text-center">
       <form
       action="/game/<%= @game.id %>/create-round" 
       method="POST"
@@ -27,31 +33,79 @@
       role="form">
     </div>
 
-    <div class="col-xs-12 text-center">
-      <input 
-          type="text"
-          class="form-control text-center" 
-          placeholder="WHAT'S THE COMMONALITY?"
-          NAME="first_word">
-    </div>
-
-    <div class="col-xs-12 text-center">
-      <button 
-        type="submit" 
-        name="Submit"
-        class="btn btn-default">
-            MAKE IT GOOD
-      </button>
-    </div>
-
-    </form>
-
+    <div class="col-xs-3"></div>
   </div>
-<% end %>
+
+  <div class="row">
+    <div class="col-xs-2"></div>
+
+      <div class="col-xs-8 text-center color-fill-1">
+        <input 
+            type="text"
+            class="form-control text-center" 
+            placeholder="MAYBE A JAUNT OVER TO THE URBAN DICTIONARY WILL HELP?"
+            NAME="player1_word">
+      </div>
+
+  <div class="col-xs-2"></div>
+</div>
+
+<div class="row">
+  <div class="col-xs-3"></div>
+
+    <div class="col-xs-6 text-center speech-triangle">
+      <button 
+        type="submit"
+        class="btn-guess-wrap btn-default btn-default">
+            SUBMIT THE FIRST WORD
+      </button>  
+    </div>
+    </form>
+  <div class="col-xs-3"></div>
+</div>
+
+<div class="row">
+
+  <div class="col-xs-4 text-center img-push">
+    <img src="http://imageshack.com/a/img62/4876/au46.png">
+  </div>
+
+  <div class="col-xs-4 text-center">
+  <p id="the-good-stuff"></p>
+  </div>
+
+  <div class="col-xs-4 text-center img-push">
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<% end %> <!-- Ends "if !Round.round_exists?(@game) && @game.player1?(current_user)" -->
 
 <!--  -->
 <!-- Displays previous guesses -->
 <!--  -->
+
+
+
+
+
+
+
+
+
+  <div class="row min-height">
+    <div class="col-xs-12"></div>
+  </div>
 
 <% x = 1 %>
 <% Round.where(game_id: @game.id).each do |round| %>
@@ -60,7 +114,10 @@
 
   <% if (round.player1_word && round.player2_word) %>
 
-      <div class="col-xs-5 text-center alert alert-success">    
+      <div class="row">
+
+      <div class="col-xs-1"></div>
+      <div class="col-xs-4 text-center guess">    
         <% if @game.player1?(current_user) %>
           <%= @p1_word = round.player1_word %>
         <% else %>
@@ -68,139 +125,289 @@
         <% end %>
       </div>
 
-      <div class="col-xs-2 text-center">
-        <p>ROUND<br /> <%= x %></p>
+      <div class="col-xs-2 text-center round-marker">
+        <p><%= x %></p>
       </div>
 
 
-      <div class="col-xs-5 text-center alert alert-success">
+      <div class="col-xs-4 text-center guess">
         <% if !@game.player1?(current_user) %>
           <%= @p1_word = round.player1_word %>
         <% else %>
           <%= @p2_word = round.player2_word %>
         <% end %>
       </div>
+      <div class="col-xs-1"></div>
 
     <% end %>
   
 <% x += 1 %>
+
+</div>
 <% end %>
+
+
+
+</div>
+
+</div>
 
 <!--  -->
 <!-- This is all the stuff regarding the way to pick players and who should go when -->
 <!--  -->
 
 <% if Round.round_exists?(@game) %>
-  <h3 class="text-center">Current Round: <%= Round.round_count(@game) %></h2>
-<% if !@current_round.word_match? %>
+  
+<div class="background-img">
 
+<% if !@current_round.word_match? %>
   <% if (@current_round.player1_word == nil) && @game.player1?(current_user)%>
+
     <div class="row">
       
-      <div class="col-xs-12 text-center">
-
-        <form
-        action="/game/<%= @game.id %>/guess/<%= @current_round.id %>"
-        method="POST"
-        class="form-inline" 
-        role="form">
+      <div class="col-xs-2">
       </div>
 
-      <div class="col-xs-12 text-center">
-        <input  
-            type="text"
-            class="form-control text-center" 
-            placeholder="WHAT'S THE COMMONALITY, PLAYER1?"
-            NAME="player1_word">
+      <div class="col-xs-8 text-center color-fill-1">
+
+<form
+action="/game/<%= @game.id %>/guess/<%= @current_round.id %>"
+method="POST"
+class="form" 
+role="form">
+
+      <label class="sr-only" for="guess">Guess</label>
+      <input  
+          type="text"
+          class="form-control text-center" 
+          placeholder="COMMON THEME?"
+          name="player1_word">
+
       </div>
 
-      <div class="col-xs-12 text-center">
+      <div class="col-xs-2">
+      </div>
+
+    </div>
+
+    <div class="row">
+      
+      <div class="col-xs-3">
+      </div>
+
+      <div class="col-xs-6 text-center speech-triangle">
         <button 
           type="submit" 
           name="Submit"
-          class="btn btn-default">
-              MAKE IT GOOD PLAYER 1
+          class="btn-guess btn-guess-wrap btn-default">
+          MAKE IT GOOD PLAYER 1
         </button>
+
+</form>
+       
       </div>
-      </form>
+
+      <div class="col-xs-3">
+      </div>
 
     </div>
-  <% end %>
+  <% end %> <!-- Ends player 1 selection -->
+
+
 
   <% if (@current_round.player2_word == nil) && !@game.player1?(current_user)%>
+    
+    <div class="row">
+
+      <div class="col-xs-2">
+      </div>
+
+      <div class="col-xs-8 text-center color-fill-1">
+
+<form
+action="/game/<%= @game.id %>/guess/<%= @current_round.id %>"
+method="POST"
+class="form" 
+role="form">
+
+      <label class="sr-only" for="guess">Guess</label>
+      <input  
+          type="text"
+          class="form-control text-center" 
+          placeholder="COMMON THEME?"
+          name="player2_word">
+
+      </div>
+
+      <div class="col-xs-2">
+      </div>
+
+    </div>
 
     <div class="row">
       
-      <div class="col-xs-12 text-center">
-
-        <form
-        action="/game/<%= @game.id %>/guess/<%= @current_round.id %>"
-        method="POST"
-        class="form-inline" 
-        role="form">
+      <div class="col-xs-3">
       </div>
 
-      <div class="col-xs-12 text-center">
-        <input 
-            type="text"
-            class="form-control text-center" 
-            placeholder="WHAT'S THE COMMONALITY, PLAYER 2?"
-            NAME="player2_word">
+      <div class="col-xs-6 text-center speech-triangle">
+          <button 
+            type="submit" 
+            name="Submit"
+            class="btn-guess btn-guess-wrap btn-default">
+            GUESS
+          </button>
+        </span>
+
+</form>
+       
       </div>
 
-      <div class="col-xs-12 text-center">
-        <button 
-          type="submit" 
-          name="Submit"
-          class="btn btn-default">
-              MAKE IT GOOD PLAYER 2
-        </button>
+      <div class="col-xs-3">
       </div>
 
-      </form>
     </div>
-
   <% end %>
 
-<% end %>
+<% end %> <!-- End word match -->
+
+
+
+
+
+
+
+
+
+
+
+
+<% if @current_round.word_match? %>      
+    <div class="row">
+
+      <div class="col-xs-2">
+      </div>
+
+      <div class="col-xs-8 text-center color-fill-1">
+        <h1><%= @current_round.player2_word %></h1>      
+      </div>
+
+      <div class="col-xs-2">
+      </div>
+
+    </div>
+
+    <div class="row">
+      <div class="col-xs-3">
+      </div>
+
+      <div class="col-xs-6 text-center speech-triangle-both">
+      <div class="speech-triangle">
+        
+      </div>
+      </div>
+
+      <div class="col-xs-3">
+      </div>
+    </div>
+
+<% @game.update(status: "Complete") %>  
+<% end %> <!-- Closes @current_round.word_match? -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="row">
+
+  <div class="col-xs-4 text-center img-push">
+    <img src="http://imageshack.com/a/img62/4876/au46.png">
+  </div>
+
+  <div class="col-xs-4 text-center">
+  <p id="the-good-stuff"></p>
+  </div>
+
+  <div class="col-xs-4 text-center img-push">
+    <img src="http://imageshack.com/a/img27/7024/cm2j.png">
+  </div>
+
+</div>
+
+</div>   
+
+
+<div class="row shadow">
+  
+</div>
 
 
 <!-- Waiting on other players display -->
 
 <% unless @current_round.word_match? %>
   <% if @current_round.player1_word && @game.player1?(current_user)%>
-    <h3>waiting on other player</h3>
+        
+        <div class="row">
+          <div class="col-xs-2"></div>      
+      
+            <div class="col-xs-8 text-center waiting">
+            <p>waiting on other player...</p>
+            </div>
+
+          <div class="col-xs-2"></div>
+        </div>
+          
   <% end %>
 
   <% if @current_round.player2_word && !@game.player1?(current_user)%>
-    <h3>waiting on other player</h3>
+        
+        <div class="row">
+          <div class="col-xs-2"></div>      
+
+            <div class="col-xs-8 text-center waiting">
+              <p>waiting on other player...</p>
+            </div>
+
+          <div class="col-xs-2"></div>
+        </div>
+          
   <% end %>
 <% end %>
+
+<!-- Waiting on other players display -->
+
+
   
-<!-- Same word display! -->
-
-<% if @current_round.word_match? %>  
-  <div class="row">
-    <div class="col-xs-3">
-    </div>
-
-    <div class="col-xs-6 text-center">
-      <h1>Both said: <%= @current_round.player2_word %></h1>
-    </div>
-
-    <div class="col-xs-3">
-    </div>
-  </div>
-  <% @game.update(status: "Complete") %>  
-<% end %>
-
-<p id="the-good-stuff"></p>
 
 <% end %>
 
-<a href="/profile">Back to profile</a>
+</div> <!-- Closes "container-fluid" -->
 
-</div>
-</div>
+
+
+
+
+
+
+
+
 
 

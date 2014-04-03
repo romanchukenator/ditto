@@ -1,16 +1,11 @@
-
-.form-inline .form-group input {
-    width:300px;
-}
-
 header {
   padding-right: 20px;
   padding-left: 20px;
 }
 
 body { 
-  padding: 70px 20px 70px 20px;
-  /*padding: 70px 20px 0px 20px;*/
+  /*padding: 70px 20px 70px 20px;*/
+  padding: 50px 0px 0px 0px;
 }
 
 footer {
@@ -18,57 +13,146 @@ footer {
   padding-left: 20px;
 }
 
-.footer-bg {
-  background: url('http://wallike.com/wp-content/uploads/2013/04/video-game-wallpaper.png')no-repeat center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  min-height: 1000px;
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  /*font-family: 'Amatic SC', cursive!important;*/
+  font-family: 'Patrick Hand SC', cursive!important;
 }
 
-
-.img-push {
-  height:690px;
+.form-inline .form-group input {
+  width:300px;
 }
-  
-.gradient{
-background: #3b3c6d; /* Old browsers */
-background: -moz-linear-gradient(top,  #3b3c6d 0%, #9fc1f4 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3b3c6d), color-stop(100%,#9fc1f4)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top,  #3b3c6d 0%,#9fc1f4 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(top,  #3b3c6d 0%,#9fc1f4 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(top,  #3b3c6d 0%,#9fc1f4 100%); /* IE10+ */
-background: linear-gradient(to bottom,  #3b3c6d 0%,#9fc1f4 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3b3c6d', endColorstr='#9fc1f4',GradientType=0 ); /* IE6-9 */
+
+.starfield{
+  background: url('http://imageshack.com/a/img829/5392/0cm1.png') repeat;  
+}
+
+.word-box-gradient{
+  background: #2d0b38; /* Old browsers */
+  background: -moz-linear-gradient(top,  #2d0b38 0%, #1e5799 69%, #2873a5 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2d0b38), color-stop(69%,#1e5799), color-stop(100%,#2873a5)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #2d0b38 0%,#1e5799 69%,#2873a5 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #2d0b38 0%,#1e5799 69%,#2873a5 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #2d0b38 0%,#1e5799 69%,#2873a5 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #2d0b38 0%,#1e5799 69%,#2873a5 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2d0b38', endColorstr='#2873a5',GradientType=0 ); /* IE6-9 */
 }
 
 .color-fill-1 {
-background-color: #D3D809;
-height: 70px;
-padding-left: 9px;
-padding-right: 9px;
+  background-color: #D3D809;
+  height: 70px;
+  padding-left: 9px;
+  padding-right: 9px;
+}
+
+.color-fill-top {
+  background-color: #2d0b38;
 }
 
 .speech-triangle{
-background: url('http://i62.tinypic.com/15nautc.png') no-repeat left top;
-height: 25px;
+  background: url('http://i62.tinypic.com/15nautc.png') no-repeat left top;
+  height: 25px;
+}
+
+.speech-triangle-both{
+  background: url('http://i59.tinypic.com/1547fac.png') no-repeat right top;
+  height: 25px;
 }
 
 input.form-control{
+  height: 55px;
+  margin-top:7px;
+  padding: 0px 6px;
+  width: 92%px;
+  font-size: 2em;
+  text-align: center;
+  color: #84310C;
+  background-color: #EDED7E;
+  background-image: none;
+  border: none;
+  border-radius: 0px;
+}
 
-height: 55px;
-margin-top:8px;
-padding: 0px 6px;
-font-size: 2em;
-text-align: center;
-color: #84310C;
-background-color: #EDED7E;
-background-image: none;
-border: none;
-border-radius: 0px;
+.guess{
+  min-height: 58px;
+  margin-bottom: 20px;
+  font-size: 2.5em;
+  color: #ECAF70;
+  background: url('http://imageshack.com/a/img27/8423/oem7.png') repeat;
+  background-color: #D97409;
+  -webkit-box-shadow: 5px 4px 0px 0px rgba(50, 50, 50, 0.5);
+  -moz-box-shadow:    5px 4px 0px 0px rgba(50, 50, 50, 0.5);
+  box-shadow:         5px 4px 0px 0px rgba(50, 50, 50, 0.5);
+}
+
+.round-marker{
+  background: url('http://imageshack.com/a/img401/576/m8yp.png') no-repeat center center;
+  min-height: 58px;
+  font-size: 1.75em;
+  padding-top: 12px;
+}
+
+.btn-guess-wrap{
+  background-color: #D3D809;
+}
+
+.btn-guess{
+  border: none;
+  padding: 10px;
+  border-radius: 100;
+  height: 50px;
+  min-width: 100px;
+}
+
+.img-push{
+  height: 50px;
+}
+
+.frame{
+  border-radius: 30px;
 }
 
 .background-img{
-background: url('http://www.imagebrowse.com/wp-content/uploads/2013/07/games-fascinating-mario-sprite-backgrounds-background.png');
+  background: url('http://s14.postimg.org/jgyifr6hd/glitch_bg1.png') no-repeat center center;
+  min-height: 300px;
+}
 
+.banner-img{
+background-color: #2d0b38;
+}
+
+.title-img{
+  background: url('http://imageshack.com/a/img843/7098/zkzh.png') no-repeat center center;
+  min-height: 350px;
+  margin-top: 20px;
+}
+
+.min-height{
+  height: 100px;
+}
+
+.waiting{
+  font-size: 4em;
+}
+
+.picture-border{
+/*  background: url('http://imageshack.com/a/img843/7098/zkzh.png') repeat center center;
+  height: 20px;
+*/
+}
+
+.shadow {
+-moz-box-shadow: 0 0 300px 5px #999;
+-webkit-box-shadow: 25px 2px 10px 5px #999;
+}

@@ -21,10 +21,16 @@
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="/stylesheets/application.css">
 
-<!--
+  <!--
     application.css is where you put your styles
   -->
   <link rel="stylesheet" href="/stylesheets/application.css">
+
+<!-- Font! Amatic, Patrick Hand -->
+<link href='http://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+
+<link href='http://fonts.googleapis.com/css?family=Patrick+Hand+SC' rel='stylesheet' type='text/css'>
+
 
 
   <title>Ditto - the game</title>
@@ -39,7 +45,12 @@
       <p class="navbar-text navbar-right">
       <a href = "/logout">log out</a>
       </p>
+    
+      <p class="navbar-text navbar-left">
+      <a href="/profile">Back to profile</a>
+      </p>
     <% end %>
+
   </header>
 
   <%= yield %>

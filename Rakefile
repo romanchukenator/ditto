@@ -1,5 +1,7 @@
+require 'bundler/setup'
 require 'rubygems'
 require 'mail'
+require 'pony'
 
 require 'rake'
 require "sinatra/activerecord/rake"

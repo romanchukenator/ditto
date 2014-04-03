@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
   include BCrypt
+  # include mail
+
 
   has_many :games
 

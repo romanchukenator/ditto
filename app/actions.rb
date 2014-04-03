@@ -36,16 +36,13 @@ get '/signup' do
 end
 
 post '/signup' do
-  @user = User.new(
-    email: params[:email],
-    password: params[:password]
-    )
+  @user = User.new(params)
 
-    if @user.save
-      redirect '/'
-    else
-      erb :'auth/signup'    
-    end
+  if @user.save
+    redirect '/'
+  else
+    erb :'auth/signup'    
+  end
 end
 
 # ====================
@@ -142,8 +139,16 @@ end
 post '/game/:game_id/create-round' do
     @round = Round.create(
     game_id: params[:game_id],
-    player1_word: params[:first_word]
+    player1_word: params[:player1_word]
     )
     Game.find(params[:game_id]).on_going
   redirect 'profile'
 end
+
+# Splat error
+# post '/game/:game_id/create-round' do
+#   @round = Round.create(params)
+
+#   Game.find(params[:game_id]).on_going
+#   redirect 'profile'
+# end

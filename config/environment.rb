@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
+# require 'pony'
 
 require 'active_support/all'
 
@@ -7,8 +8,9 @@ require 'active_support/all'
 require 'sinatra'
 require 'sinatra/activerecord'
 
-require 'pry'
+require 'pry' if development?
 
+# require 'mail'
 
 
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
