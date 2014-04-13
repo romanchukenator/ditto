@@ -39,7 +39,8 @@ post '/signup' do
   @user = User.new(params)
 
   if @user.save
-    redirect '/'
+      session[:user_id] = @user.id
+      redirect '/profile'
   else
     erb :'auth/signup'    
   end
