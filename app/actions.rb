@@ -39,7 +39,8 @@ post '/signup' do
   @user = User.new(params)
 
   if @user.save
-    redirect '/'
+      session[:user_id] = @user.id
+      redirect '/profile'
   else
     erb :'auth/signup'    
   end
@@ -83,7 +84,7 @@ end
 
 #Creates a new game with whomever you wish. Needs a validator for a valid email a1!
 post '/create' do
-  if params[:player2] != current_user.email
+  if params[:player2] != current_user.email && User.email_exists(params[:player2])
     if @player2 = User.find_by(email: params[:player2])
       
         @game = Game.create_new_game_invite(current_user, @player2)
