@@ -27,5 +27,10 @@ class User < ActiveRecord::Base
     self.password_hash = @password
   end  
 
+  def self.email_exists(email)
+    if User.find_by(email: email) 
+      true
+    end 
+  end
 
 end
